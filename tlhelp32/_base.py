@@ -108,10 +108,10 @@ class BaseSnapshot(abc.ABC):
 class BaseIterator(abc.ABC):
     """Base iterator class for all `*Iterator` classes."""
 
-    _first_fn: Callable[[wt.HANDLE, ctypes.pointer[SizedStructure]], wt.BOOL]
+    _first_fn: Callable[[wt.HANDLE, ctypes._PointerLike[SizedStructure]], wt.BOOL]
     """Retrieves the first element from an iterator, akin to `iter()`."""
 
-    _next_fn: Callable[[wt.HANDLE, ctypes.pointer[SizedStructure]], wt.BOOL]
+    _next_fn: Callable[[wt.HANDLE, ctypes._PointerLike[SizedStructure]], wt.BOOL]
     """Retrives the next element from an iterator every time until the end."""
 
     _dt_type: Type[DataclassMixin]
